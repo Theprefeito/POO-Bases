@@ -55,7 +55,7 @@ public class Teste : MonoBehaviour
         
         //============================================
         
-        joao.AtribuirNome("João Roberto II");
+        joao.AtribuirNome("Fuleco");
         joao.AtribuirEnergia(10);
         joao.AtribuirForca_Ataque(12);
         joao.AtribuirForca_do_pulo(6);
@@ -63,7 +63,7 @@ public class Teste : MonoBehaviour
         joao.AtribuitNumero_de_pes(2);
         joao.AtribuitNumero_de_maos(2);
         
-        ork.AtribuirNome("Ork Gob");
+        ork.AtribuirNome("Peppa pig");
         ork.AtribuirEnergia(23);
         ork.AtribuirForca_Ataque(15);
         ork.AtribuirForca_do_pulo(8);

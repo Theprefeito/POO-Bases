@@ -15,7 +15,7 @@ public class InimigoManager : MonoBehaviour
     }
     void Update()
     {
-        animator.SetBool("Andando", movimentoInimigo.andando);
+        animator.SetBool("Andando", movimentoInimigo.naVisao);
         animator.speed = velocidadeDaAnimacao;
 
         if (movimentoInimigo.ataqueObject == true)

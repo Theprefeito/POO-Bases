@@ -17,7 +17,7 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
-        animator.SetBool("Andando", movimentoPlayer.andando);
+        animator.SetBool("Andando", movimentoPlayer.Andando);
         animator.speed = velocidadeDaAnimacao;
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -29,6 +29,17 @@ public class PlayerManager : MonoBehaviour
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
         }
+        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animator.SetTrigger("Ataque");  
+        }
+
+        if (personagem.Energia() <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        }
+
 
     }
 }

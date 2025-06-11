@@ -12,7 +12,7 @@ public class MovimentoInimigo : MonoBehaviour
     private float velocidade;
 
     public float raioDeVisao = 10;
-    private bool naVisao = false;
+    public bool naVisao = false;
     
     private SphereCollider _sphereCollider;
 
