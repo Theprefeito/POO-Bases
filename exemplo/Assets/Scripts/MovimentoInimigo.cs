@@ -7,7 +7,12 @@ public class MovimentoInimigo : MonoBehaviour
     public GameObject ataqueObject;
     private GameObject _player;
     
+    public bool andando = false;
+    public bool ataque = false;
     
+    public float velocidadeAtaque = 1;
+    private float ataqueTime = 0;
+        
     private Rigidbody _rigidbody;
     private float velocidade;
 
@@ -25,11 +30,19 @@ public class MovimentoInimigo : MonoBehaviour
         _sphereCollider = gameObject.GetComponent<SphereCollider>();
         
         _player = GameObject.FindWithTag("Player");
+
+        ataqueTime = 0;
     }
 
  
     void Update()
     {
+        andando = false;
+        ataque = false;
+
+        ataqueTime += Time.unscaledDeltaTime;
+        
+        
         _sphereCollider.radius = raioDeVisao;    
         if (Vector3.Distance(transform.position, _player.transform.position) > distanciaMinima)
         {
@@ -39,12 +52,18 @@ public class MovimentoInimigo : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position,
                     _player.transform.position,
                     velocidade * Time.deltaTime);
+                
+                andando = true;
             }
             ataqueObject.SetActive(false);
         }
+        
         else
         {
             ataqueObject.SetActive(true);
+            ataque = true;
+
+            ataqueTime = 0;
         }
 
         Debug.DrawLine(transform.position, _player.transform.position, Color.red);

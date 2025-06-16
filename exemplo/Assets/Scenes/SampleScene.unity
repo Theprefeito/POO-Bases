@@ -273,6 +273,11 @@ MonoBehaviour:
   interpolacao: 12
   CamMoveSpeed: 5
   distancia: -5
+--- !u!1 &376211251 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: b0b77b844685b3a478784aff98568e89, type: 3}
+  m_PrefabInstance: {fileID: 1518855877}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,10 +411,9 @@ GameObject:
   - component: {fileID: 617508518}
   - component: {fileID: 617508517}
   - component: {fileID: 617508516}
-  - component: {fileID: 617508520}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Ataque
+  m_TagString: Ataque
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -503,18 +507,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1787555255}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &617508520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 617508515}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e06487658f4f3458e76d1104fd32e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &651962731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -584,6 +576,28 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: b0b77b844685b3a478784aff98568e89, type: 3}
   m_PrefabInstance: {fileID: 1518855877}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &813200112
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 376211251}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 649eeca04cea7e9449f8d284c91721be, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,11 +659,11 @@ GameObject:
   - component: {fileID: 1110811253}
   - component: {fileID: 1110811252}
   - component: {fileID: 1110811255}
+  - component: {fileID: 1110811260}
   - component: {fileID: 1110811258}
   - component: {fileID: 1110811259}
   - component: {fileID: 1110811257}
   - component: {fileID: 1110811256}
-  - component: {fileID: 1110811260}
   m_Layer: 0
   m_Name: Personagem
   m_TagString: Player
@@ -981,9 +995,10 @@ GameObject:
   - component: {fileID: 1371465323}
   - component: {fileID: 1371465322}
   - component: {fileID: 1371465321}
+  - component: {fileID: 1371465324}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: AtaqueHeroi
+  m_TagString: AtaqueHeroi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -997,7 +1012,7 @@ Transform:
   m_GameObject: {fileID: 1371465319}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19944835, y: -0.63, z: 1.01}
+  m_LocalPosition: {x: -0.085, y: -0.63, z: 1.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1077,6 +1092,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371465319}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1371465324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371465319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0601ffb73f712c46b7c86c346477fd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  personagem: {fileID: 1110811258}
 --- !u!1 &1437292753
 GameObject:
   m_ObjectHideFlags: 0
@@ -1115,7 +1143,7 @@ Transform:
   m_GameObject: {fileID: 1437292753}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.9513216, y: -0.6538293, z: 2.409002}
+  m_LocalPosition: {x: -1.9513216, y: 0.507, z: 2.409002}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1208,7 +1236,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: b0b77b844685b3a478784aff98568e89, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 813200112}
   m_SourcePrefab: {fileID: 100100000, guid: b0b77b844685b3a478784aff98568e89, type: 3}
 --- !u!1 &1787555250
 GameObject:
@@ -1222,10 +1253,11 @@ GameObject:
   - component: {fileID: 1787555254}
   - component: {fileID: 1787555253}
   - component: {fileID: 1787555251}
-  - component: {fileID: 1787555256}
   - component: {fileID: 1787555257}
+  - component: {fileID: 1787555256}
   - component: {fileID: 1787555259}
   - component: {fileID: 1787555258}
+  - component: {fileID: 1787555260}
   m_Layer: 0
   m_Name: Inimigo
   m_TagString: Inimigo
@@ -1364,6 +1396,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ataqueObject: {fileID: 617508515}
+  andando: 0
+  ataque: 0
+  velocidadeAtaque: 1
   raioDeVisao: 10
   naVisao: 0
   distanciaMinima: 1.5
@@ -1411,6 +1446,20 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1787555260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1787555250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876b076c5b805394b8377ac3fedd5b6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 0}
+  velocidadeDaAnimacao: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1418,7 +1467,7 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1110811254}
   - {fileID: 1787555255}
   - {fileID: 1162497110}
   - {fileID: 1437292755}
-  - {fileID: 1110811254}

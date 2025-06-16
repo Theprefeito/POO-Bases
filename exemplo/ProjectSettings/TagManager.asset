@@ -7,6 +7,8 @@ TagManager:
   - Personagem
   - Inimigo
   - chao
+  - Ataque
+  - AtaqueHeroi
   layers:
   - Default
   - TransparentFX
