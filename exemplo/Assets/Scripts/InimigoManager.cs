@@ -18,7 +18,7 @@ public class InimigoManager : MonoBehaviour
         animator.SetBool("Andando", movimentoInimigo.naVisao);
         animator.speed = velocidadeDaAnimacao;
 
-        if (movimentoInimigo.ataqueObject == true)
+        if (movimentoInimigo.ataque == true)
         {
             animator.SetTrigger("Ataque");  
         }
